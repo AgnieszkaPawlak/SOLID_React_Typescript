@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  RouterProvider,
+  createBrowserRouter
+} from "react-router-dom";
+import './App.sass';
+import {ErrorPage} from "../src/ErrorPage";
+import { OpenClose } from './pages/open-closed/OpenClose';
+import { SingleResponsibility } from './pages/single-responsibility/SingleResponsibility';
+import { LiskovSubstitution } from './pages/liskov-substitution/LiskovSubstitution';
+import { InterfaceSegregation } from './pages/interface-segregation/InterfaceSegregation';
+import { DependencyInversion } from './pages/dependency-inversion/DependencyInversion';
+import { RootLayout } from './layouts/RootLayout';
+
+const router = createBrowserRouter(
+  [
+    {
+        path: "/",
+        element: <RootLayout />,
+        errorElement: <ErrorPage />,
+    },
+    {
+      path: "/open-close",
+      element: <OpenClose />,
+    },
+    {
+      path: "/single-responsibility",
+      element: <SingleResponsibility />,
+    },
+    {
+      path: "/liskov-substitution",
+      element: <LiskovSubstitution />,
+    },
+    {
+      path: "/interface-segregation",
+      element: <InterfaceSegregation />,
+    },
+    {
+      path: "/dependency-inversion",
+      element: <DependencyInversion />,
+    },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  
+  return <RouterProvider router={router} />
 }
 
 export default App;
