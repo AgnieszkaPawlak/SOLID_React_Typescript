@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
 
 export const RootLayout = () => {
   return (
     <div>
+      <Navbar/>
       <h1>SOLID Principles</h1>
       <nav>
         <ul>
