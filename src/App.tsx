@@ -2,7 +2,7 @@ import {
   RouterProvider,
   createBrowserRouter
 } from "react-router-dom";
-// import './App.scss';
+import './App.sass';
 import {ErrorPage} from "../src/ErrorPage";
 import { OpenClose } from './pages/open-closed/OpenClose';
 import { SingleResponsibility } from './pages/single-responsibility/SingleResponsibility';
