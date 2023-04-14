@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import Nav from '../components/Nav/Nav'
 
-export const RootLayout = () => {
+export const Layout = () => {
   return (
     <div>
-      <h1>SOLID Principles</h1>
-      <nav>
+      <Nav/>
+      {/* <nav>
         <ul>
           <li>
             <Link to="/open-close">Open Close</Link>
@@ -22,7 +22,7 @@ export const RootLayout = () => {
             <Link to="/dependency-inversion">Dependency Inversion</Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </div>
     )
 };

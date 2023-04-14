@@ -2,20 +2,23 @@ import {
   RouterProvider,
   createBrowserRouter
 } from "react-router-dom";
-import './App.sass';
 import {ErrorPage} from "../src/ErrorPage";
 import { OpenClose } from './pages/open-closed/OpenClose';
 import { SingleResponsibility } from './pages/single-responsibility/SingleResponsibility';
 import { LiskovSubstitution } from './pages/liskov-substitution/LiskovSubstitution';
 import { InterfaceSegregation } from './pages/interface-segregation/InterfaceSegregation';
 import { DependencyInversion } from './pages/dependency-inversion/DependencyInversion';
-import { RootLayout } from './layouts/RootLayout';
+import { Layout } from './layouts/Layout';
+
+
+import { GlobalStyles } from './Global.styled'
+ 
 
 const router = createBrowserRouter(
   [
     {
         path: "/",
-        element: <RootLayout />,
+        element: <Layout />,
         errorElement: <ErrorPage />,
     },
     {
@@ -40,9 +43,16 @@ const router = createBrowserRouter(
     },
 ]);
 
+
 function App() {
   
-  return <RouterProvider router={router} />
+  return <>
+  <GlobalStyles/>
+  <RouterProvider router={router} />
+
+  </>
+  
+
 }
 
 export default App;
